@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "report": {
+        "path": "SAIL_CEO_Dashboard_Report",
+        "type": "Report"
+      }
+    }
+  ]
+}
