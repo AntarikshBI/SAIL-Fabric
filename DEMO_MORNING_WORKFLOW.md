@@ -1,148 +1,147 @@
-# 🚨 DEMO DAY - SIMPLE 30-MIN WORKFLOW
+# SAIL Demo - Morning Workflow (May 18, 2026)
 
-## Forget the broken PBIP files. Here's what actually works:
+## Status: PBIP file is properly built and ready to open
 
----
+Your repo now has a clean PBIP project that matches Microsoft's official sample format. All 8 metadata JSON files validate correctly.
 
-## **Step 1: Open Power BI Desktop** (1 min)
-
-1. Windows Key → Type "Power BI" → Open Power BI Desktop
-2. Click **"Blank report"** if welcome screen appears
-
----
-
-## **Step 2: Connect to Gold Lakehouse** (5 min)
-
-1. **Home ribbon** → **Get Data** → **OneLake data hub**
-
-2. Browse to: **SAIL** workspace → **Gold__lh** lakehouse
-
-3. Click **Connect**
-
-4. **Select tables** (checkboxes):
-   - ✅ agg_plant_daily_summary
-   - ✅ dim_plant  
-   - ✅ fact_production
-
-5. Click **"Load"** (NOT Transform)
-
-6. Wait 30 seconds for data to load
+```
+SAIL-Fabric/
+├── SAIL_Dashboard.pbip                    <-- Double-click to open in Power BI Desktop
+├── SAIL_Dashboard.Report/
+│   ├── definition.pbir                    (points to semantic model)
+│   ├── .platform                          (Fabric Git metadata)
+│   ├── report.json                        (empty page + SAIL dark theme)
+│   └── StaticResources/RegisteredResources/SAIL-Dark-Theme.json
+└── SAIL_Dashboard.SemanticModel/
+    ├── definition.pbism
+    ├── .platform
+    └── model.bim                          (10 measures pre-built, needs SQL endpoint)
+```
 
 ---
 
-## **Step 3: Apply Dark Theme** (1 min)
+## STEP 1: Get the Gold Lakehouse SQL Endpoint (2 min)
 
-1. **View** ribbon → **Themes** → **Browse for themes**
-
-2. Navigate to: `C:\Users\ashahwal\SAIL-Fabric\SAIL_CEO_Dashboard_Report\StaticResources\RegisteredResources`
-
-3. Select **`SAIL-Dark-Theme.json`** → Click **Open**
-
-4. Report now has SAIL colors
+1. Open: https://app.fabric.microsoft.com/groups/5964ac59-2715-4b7a-910e-c5d2dcb82a77
+2. Click **Gold__lh** lakehouse
+3. Top-right corner: dropdown next to "Lakehouse" -> Click **SQL analytics endpoint**
+4. Click **Settings** (gear icon) at top -> **SQL endpoint**
+5. Copy the value labeled **SQL connection string** (looks like `abc123xyz.datawarehouse.fabric.microsoft.com`)
 
 ---
 
-## **Step 4: Build 5 Visuals** (15 min)
+## STEP 2: Open the PBIP in Power BI Desktop (1 min)
 
-### **Card 1: Total Hot Metal**
-- Click blank canvas → Click **Card** icon in Visualizations pane
-- From Data pane → drag `agg_plant_daily_summary[total_hot_metal]` to Fields
+1. In File Explorer, navigate to `C:\Users\ashahwal\SAIL-Fabric\`
+2. **Double-click `SAIL_Dashboard.pbip`**
+3. Power BI Desktop opens. If it shows a preview-feature prompt, enable it.
+
+---
+
+## STEP 3: Set the SQL Endpoint Parameter (2 min)
+
+1. **Home ribbon** -> **Transform data** -> **Edit parameters**
+2. Find parameter **SQLEndpoint**
+3. Replace placeholder text with the SQL connection string you copied
+4. Click **OK**
+5. **Home ribbon** -> **Refresh** (or "Apply changes" yellow banner if shown)
+6. Data loads from Gold__lh - `agg_plant_daily_summary` table appears in Data pane (right side)
+
+---
+
+## STEP 4: Build the Overview Page (15 min)
+
+The page is empty with the SAIL dark theme already applied. You will see all 10 pre-built measures in the Data pane under `agg_plant_daily_summary` -> fx Measures:
+- Total Hot Metal, Target Hot Metal
+- Total Crude Steel, Target Crude Steel
+- Total Saleable Steel, Target Saleable Steel
+- Achievement %
+- Hot Metal Achievement %
+- Crude Steel Achievement %
+- Saleable Steel Achievement %
+
+### Visual 1: KPI Card - Total Hot Metal
+- Click blank canvas -> click **Card** icon in Visualizations pane
+- Drag measure **Total Hot Metal** to Fields
 - Resize small, place top-left
 
-### **Card 2: Total Crude Steel**
-- Click blank → Card icon
-- Drag `total_crude_steel` → Fields
+### Visual 2: KPI Card - Total Crude Steel
+- Click blank -> Card icon
+- Drag measure **Total Crude Steel** to Fields
 - Place next to Card 1
 
-### **Card 3: Achievement %**
-- Click blank → Card icon
-- Drag `overall_achievement_pct` → Fields
-- Right-click field → change to **Average**
+### Visual 3: KPI Card - Achievement %
+- Click blank -> Card icon
+- Drag measure **Achievement %** to Fields
+- Place next to Card 2
 
-### **Bar Chart: Production by Plant**
-- Click blank → **Clustered Bar Chart** icon
-- Drag `plant_name` → **Y-axis**
-- Drag `total_hot_metal` → **X-axis**
-- Make it big (middle of canvas)
+### Visual 4: Bar Chart - Hot Metal by Plant
+- Click blank -> **Clustered Bar Chart** icon
+- Y-axis: drag column `plant_name`
+- X-axis: drag measure `Total Hot Metal`
+- Resize big, place middle of canvas
 
-### **Table: Plant Performance**
-- Click blank → **Table** icon
-- Drag these to Columns:
-  - `plant_name`
-  - `total_hot_metal`
-  - `target_hot_metal`
-  - `overall_achievement_pct`
+### Visual 5: Table - Plant Performance
+- Click blank -> **Table** icon
+- Columns (in order): `plant_name`, `Total Hot Metal`, `Target Hot Metal`, `Achievement %`
+- Place at bottom
 
----
-
-## **Step 5: Add Title** (1 min)
-
-- **Insert** ribbon → **Text box**
-- Click top of canvas
-- Type: **"SAIL Daily Operations Dashboard"**
-- Font size 28, Bold, Orange color
+### Visual 6 (optional): Title text box
+- **Insert** ribbon -> **Text box**
+- Type: `SAIL Daily Operations Dashboard`
+- Font 28, Bold, color orange (#e87a20)
 
 ---
 
-## **Step 6: Publish** (3 min)
+## STEP 5: Publish to Fabric (3 min)
 
-1. **Home** ribbon → **Publish** button (top right)
-
-2. **Save first** - it asks to save:
-   - Location: `C:\Users\ashahwal\SAIL-Fabric\`
-   - File name: `SAIL_Dashboard.pbix`
-   - Save
-
+1. **Home ribbon** -> **Publish**
+2. Save prompts: keep defaults, save under `C:\Users\ashahwal\SAIL-Fabric\`
 3. Sign in if prompted
-
-4. Select destination: **SAIL** workspace
-
-5. Click **Select**
-
-6. Wait 30 sec → "Success!" 
-
-7. Click link → opens in browser
+4. Choose **SAIL** workspace -> Click **Select**
+5. Wait 30 sec for "Success" dialog
+6. Click the URL link to open in browser
 
 ---
 
-## ✅ **DONE - Ready for 11 AM Demo**
+## Demo Script (5 min for customer)
+
+**Opening:** "This is SAIL's daily operations dashboard, connected directly to our Gold lakehouse in Microsoft Fabric. The data flows from raw plant Excel uploads through Bronze and Silver layers into Gold, where it's aggregated for executive reporting."
+
+**KPI Cards:** "At a glance we see total hot metal, crude steel output, and overall achievement against daily targets across all 5 plants."
+
+**Bar Chart:** "Production breakdown by plant - we can see which plants are performing well and which need attention today."
+
+**Table:** "Detailed actuals vs targets per plant. This drives the daily review meeting."
+
+**Pipeline talking point:** "Reports auto-refresh as new plant data lands. The same Fabric workspace also hosts the lakehouse, notebooks for ETL, and Git integration for CI/CD - everything in one platform."
+
+**If asked about the .jsx prototype:** "That was our self-service file-upload prototype for plants without direct system integration. This Power BI report is the production reporting layer."
 
 ---
 
-## 🎬 **Demo Script (5 min):**
+## Emergency Plan B (if PBIP still has issues)
 
-**Opening:**
-"This is SAIL's daily operations dashboard - real-time view across all 5 plants."
-
-**KPI Cards:**
-"At a glance: total hot metal, crude steel output, and overall target achievement."
-
-**Bar Chart:**
-"Production breakdown by plant - Bhilai is performing best."
-
-**Table:**
-"Detailed actuals vs targets - this drives daily review meetings."
-
-**Data Pipeline:**
-"Data flows: Bronze (raw Excel from plants) → Silver (cleaned) → Gold (aggregated). Dashboard auto-refreshes."
-
-**If asked about .jsx app:**
-"That's our prototype for plant-level file uploads. This Power BI is production."
+1. Open Power BI Desktop normally (don't open the .pbip)
+2. **Home -> Get Data -> OneLake data hub**
+3. Browse SAIL workspace -> Gold__lh -> Connect
+4. Select tables -> Load
+5. **View -> Themes -> Browse for themes ->** select `C:\Users\ashahwal\SAIL-Fabric\SAIL_Dashboard.Report\StaticResources\RegisteredResources\SAIL-Dark-Theme.json`
+6. Build the 5 visuals as above (no measures pre-built, so use SUM directly on `total_hot_metal` etc.)
+7. Publish to SAIL workspace
 
 ---
 
-## 🆘 **Emergency Plan B:**
+## Why This Time Works (vs. last night's attempts)
 
-If Power BI Desktop has issues, just show the **Fabric workspace** directly:
-1. Open: https://app.fabric.microsoft.com/groups/5964ac59-2715-4b7a-910e-c5d2dcb82a77
-2. Show **Gold__lh** with the tables
-3. Click `agg_plant_daily_summary` → show data preview
-4. "Our data warehouse is consolidating production data from all plants"
+The previous PBIP files were missing the required `definition.pbir` file and used a non-standard folder name (`SAIL_CEO_Dashboard_Report` instead of `<Name>.Report`). This rebuild:
 
-Still demonstrates value.
+- Top-level `.pbip` matches Microsoft's `Sales.pbip` sample byte-for-byte in structure
+- Report folder has the REQUIRED `definition.pbir` pointing at the semantic model
+- Semantic model folder has `definition.pbism` per the schema
+- `.platform` files registered for Fabric Git integration  
+- `model.bim` uses standard compatibility level 1550 with parameter-driven SQL endpoint
 
----
-
-## 💤 **GO SLEEP. Alarm 9:15 AM.**
-
-Trust the process. This will work tomorrow.
+Schemas verified against:
+- https://github.com/microsoft/json-schemas/tree/main/fabric/pbip
+- https://github.com/microsoft/Analysis-Services/tree/master/pbidevmode/fabricps-pbip/SamplePBIP
