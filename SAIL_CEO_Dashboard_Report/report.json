@@ -1,0 +1,83 @@
+{
+  "version": "5.0",
+  "dataModelRelationships": [],
+  "defaultTheme": {
+    "name": "SAIL Dark Theme",
+    "dataColors": ["#e87a20", "#1db954", "#e84040", "#d4a017", "#0aafcf", "#3478f6", "#9070e0"],
+    "background": "#080c14",
+    "foreground": "#e8ecf4",
+    "tableAccent": "#e87a20"
+  },
+  "reportId": "sail-ceo-dashboard",
+  "config": "{\\"displayName\\":\\"SAIL CEO Dashboard\\",\\"description\\":\\"Comprehensive daily operations dashboard for Steel Authority of India steel plants\\"}",
+  "layoutOptimization": 0,
+  "resourcePackages": [{
+    "resourcePackage": {
+      "name": "SharedResources",
+      "type": 1,
+      "items": [{
+        "name": "RegisteredResources/SAIL-Dark-Theme",
+        "path": "StaticResources/RegisteredResources/SAIL-Dark-Theme.json",
+        "type": "theme"
+      }]
+    }
+  }],
+  "sections": [
+    {
+      "id": "overview-page",
+      "name": "Overview",
+      "displayName": "Overview",
+      "visualContainers": [],
+      "config": "{\\"layouts\\":[{\\"id\\":0,\\"position\\":{\\"x\\":0,\\"y\\":0,\\"z\\":0,\\"width\\":1280,\\"height\\":720}}]}",
+      "displayOption": 0
+    },
+    {
+      "id": "production-page",
+      "name": "Production",
+      "displayName": "Production Units",
+      "visualContainers": [],
+      "config": "{\\"layouts\\":[{\\"id\\":0,\\"position\\":{\\"x\\":0,\\"y\\":0,\\"z\\":0,\\"width\\":1280,\\"height\\":720}}]}",
+      "displayOption": 0
+    },
+    {
+      "id": "mills-page",
+      "name": "Mills",
+      "displayName": "Rolling Mills",
+      "visualContainers": [],
+      "config": "{\\"layouts\\":[{\\"id\\":0,\\"position\\":{\\"x\\":0,\\"y\\":0,\\"z\\":0,\\"width\\":1280,\\"height\\":720}}]}",
+      "displayOption": 0
+    },
+    {
+      "id": "rawmat-page",
+      "name": "RawMaterials",
+      "displayName": "Raw Materials",
+      "visualContainers": [],
+      "config": "{\\"layouts\\":[{\\"id\\":0,\\"position\\":{\\"x\\":0,\\"y\\":0,\\"z\\":0,\\"width\\":1280,\\"height\\":720}}]}",
+      "displayOption": 0
+    },
+    {
+      "id": "despatch-page",
+      "name": "Despatch",
+      "displayName": "Despatch & Loading",
+      "visualContainers": [],
+      "config": "{\\"layouts\\":[{\\"id\\":0,\\"position\\":{\\"x\\":0,\\"y\\":0,\\"z\\":0,\\"width\\":1280,\\"height\\":720}}]}",
+      "displayOption": 0
+    },
+    {
+      "id": "energy-page",
+      "name": "Energy",
+      "displayName": "Energy & Utilities",
+      "visualContainers": [],
+      "config": "{\\"layouts\\":[{\\"id\\":0,\\"position\\":{\\"x\\":0,\\"y\\":0,\\"z\\":0,\\"width\\":1280,\\"height\\":720}}]}",
+      "displayOption": 0
+    },
+    {
+      "id": "delays-page",
+      "name": "Delays",
+      "displayName": "Delays & Issues",
+      "visualContainers": [],
+      "config": "{\\"layouts\\":[{\\"id\\":0,\\"position\\":{\\"x\\":0,\\"y\\":0,\\"z\\":0,\\"width\\":1280,\\"height\\":720}}]}",
+      "displayOption": 0
+    }
+  ]
+}

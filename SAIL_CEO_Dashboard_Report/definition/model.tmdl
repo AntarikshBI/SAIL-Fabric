@@ -1,0 +1,339 @@
+model Model
+  culture: en-US
+  defaultPowerBIDataSourceVersion: powerBI_V3
+
+  dataAccessOptions
+    legacyRedirects
+    returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["fact_production","dim_plant","dim_date","dim_kpi","fact_delays","agg_plant_daily_summary"]
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+table dim_plant
+  lineageTag: dim-plant-table
+
+  column plant_id
+    dataType: string
+    lineageTag: plant-id-col
+    summarizeBy: none
+    sourceColumn: plant_id
+    isDataTypeInferred: false
+
+  column plant_name
+    dataType: string
+    lineageTag: plant-name-col
+    summarizeBy: none
+    sourceColumn: plant_name
+
+  column location
+    dataType: string
+    lineageTag: location-col
+    summarizeBy: none
+    sourceColumn: location
+
+  column region
+    dataType: string
+    lineageTag: region-col
+    summarizeBy: none
+    sourceColumn: region
+
+  partition dim_plant = 
+m
+  let
+    Source = Lakehouse.Contents("Gold__lh"),
+    Tables = Source{[workspaceId="SAIL"]}[Data],
+    dim_plant = Tables{[Name="dim_plant"]}[Data]
+  in
+    dim_plant
+
+table dim_date
+  lineageTag: dim-date-table
+
+  column source_date
+    dataType: dateTime
+    lineageTag: source-date-col
+    summarizeBy: none
+    sourceColumn: source_date
+    isDataTypeInferred: false
+    formatString: dd-mm-yyyy
+
+  column year
+    dataType: int64
+    lineageTag: year-col
+    summarizeBy: none
+    sourceColumn: year
+
+  column month
+    dataType: int64
+    lineageTag: month-col
+    summarizeBy: none
+    sourceColumn: month
+
+  column day
+    dataType: int64
+    lineageTag: day-col
+    summarizeBy: none
+    sourceColumn: day
+
+  column quarter
+    dataType: int64
+    lineageTag: quarter-col
+    summarizeBy: none
+    sourceColumn: quarter
+
+  partition dim_date = 
+m
+  let
+    Source = Lakehouse.Contents("Gold__lh"),
+    Tables = Source{[workspaceId="SAIL"]}[Data],
+    dim_date = Tables{[Name="dim_date"]}[Data]
+  in
+    dim_date
+
+table fact_production
+  lineageTag: fact-production-table
+
+  column source_date
+    dataType: dateTime
+    lineageTag: fp-source-date
+    summarizeBy: none
+    sourceColumn: source_date
+    formatString: dd-mm-yyyy
+
+  column plant_id
+    dataType: string
+    lineageTag: fp-plant-id
+    summarizeBy: none
+    sourceColumn: plant_id
+
+  column kpi_name
+    dataType: string
+    lineageTag: fp-kpi-name
+    summarizeBy: none
+    sourceColumn: kpi_name
+
+  column actual
+    dataType: double
+    lineageTag: fp-actual
+    summarizeBy: sum
+    sourceColumn: actual
+    formatString: #,##0
+
+  column target
+    dataType: double
+    lineageTag: fp-target
+    summarizeBy: sum
+    sourceColumn: target
+    formatString: #,##0
+
+  column variance
+    dataType: double
+    lineageTag: fp-variance
+    summarizeBy: sum
+    sourceColumn: variance
+    formatString: #,##0
+
+  column pct_achieved
+    dataType: double
+    lineageTag: fp-pct-achieved
+    summarizeBy: average
+    sourceColumn: pct_achieved
+    formatString: 0.0%
+
+  measure [Total Actual] = SUM(fact_production[actual])
+    formatString: #,##0
+
+  measure [Total Target] = SUM(fact_production[target])
+    formatString: #,##0
+
+  measure [Total Variance] = SUM(fact_production[variance])
+    formatString: +#,##0;-#,##0;0
+
+  measure [Achievement %] = 
+    DIVIDE([Total Actual], [Total Target], 0)
+    formatString: 0.0%
+
+  measure [Hot Metal Actual] = 
+    CALCULATE([Total Actual], fact_production[kpi_name] = "hot_metal")
+
+  measure [Hot Metal Target] = 
+    CALCULATE([Total Target], fact_production[kpi_name] = "hot_metal")
+
+  measure [Crude Steel Actual] = 
+    CALCULATE([Total Actual], fact_production[kpi_name] = "crude_steel")
+
+  measure [Crude Steel Target] = 
+    CALCULATE([Total Target], fact_production[kpi_name] = "crude_steel")
+
+  measure [Saleable Steel Actual] = 
+    CALCULATE([Total Actual], fact_production[kpi_name] = "saleable_steel")
+
+  measure [Saleable Steel Target] = 
+    CALCULATE([Total Target], fact_production[kpi_name] = "saleable_steel")
+
+  measure [Saleable Loading Actual] = 
+    CALCULATE([Total Actual], fact_production[kpi_name] = "saleable_loading")
+
+  measure [Saleable Loading Target] = 
+    CALCULATE([Total Target], fact_production[kpi_name] = "saleable_loading")
+
+  measure [KPI Status] = 
+    VAR PctAchieved = [Achievement %]
+    RETURN
+      SWITCH(
+        TRUE(),
+        PctAchieved >= 1, "On Target",
+        PctAchieved >= 0.95, "Warning",
+        "Below Target"
+      )
+
+  measure [Status Color] = 
+    VAR PctAchieved = [Achievement %]
+    RETURN
+      SWITCH(
+        TRUE(),
+        PctAchieved >= 1, "#1db954",
+        PctAchieved >= 0.95, "#d4a017",
+        "#e84040"
+      )
+
+  partition fact_production = 
+m
+  let
+    Source = Lakehouse.Contents("Gold__lh"),
+    Tables = Source{[workspaceId="SAIL"]}[Data],
+    fact_production = Tables{[Name="fact_production"]}[Data]
+  in
+    fact_production
+
+table fact_delays
+  lineageTag: fact-delays-table
+
+  column source_date
+    dataType: dateTime
+    lineageTag: fd-source-date
+    summarizeBy: none
+    sourceColumn: source_date
+
+  column plant_id
+    dataType: string
+    lineageTag: fd-plant-id
+    summarizeBy: none
+    sourceColumn: plant_id
+
+  column unit
+    dataType: string
+    lineageTag: fd-unit
+    summarizeBy: none
+    sourceColumn: unit
+
+  column delay_type
+    dataType: string
+    lineageTag: fd-delay-type
+    summarizeBy: none
+    sourceColumn: delay_type
+
+  column severity
+    dataType: string
+    lineageTag: fd-severity
+    summarizeBy: none
+    sourceColumn: severity
+
+  column description
+    dataType: string
+    lineageTag: fd-description
+    summarizeBy: none
+    sourceColumn: description
+
+  column duration_hrs
+    dataType: double
+    lineageTag: fd-duration
+    summarizeBy: sum
+    sourceColumn: duration_hrs
+    formatString: 0.0
+
+  measure [Total Delay Hours] = SUM(fact_delays[duration_hrs])
+    formatString: 0.0
+
+  measure [Critical Delays] = 
+    CALCULATE(COUNTROWS(fact_delays), fact_delays[severity] = "critical")
+
+  measure [Delay Count] = COUNTROWS(fact_delays)
+
+  partition fact_delays = 
+m
+  let
+    Source = Lakehouse.Contents("Gold__lh"),
+    Tables = Source{[workspaceId="SAIL"]}[Data],
+    fact_delays = Tables{[Name="fact_delays"]}[Data]
+  in
+    fact_delays
+
+table agg_plant_daily_summary
+  lineageTag: agg-plant-daily-table
+
+  column source_date
+    dataType: dateTime
+    lineageTag: apd-source-date
+    summarizeBy: none
+    sourceColumn: source_date
+
+  column plant_id
+    dataType: string
+    lineageTag: apd-plant-id
+    summarizeBy: none
+    sourceColumn: plant_id
+
+  column total_hot_metal
+    dataType: double
+    lineageTag: apd-hm
+    summarizeBy: sum
+    sourceColumn: total_hot_metal
+
+  column total_crude_steel
+    dataType: double
+    lineageTag: apd-cs
+    summarizeBy: sum
+    sourceColumn: total_crude_steel
+
+  column total_saleable_steel
+    dataType: double
+    lineageTag: apd-ss
+    summarizeBy: sum
+    sourceColumn: total_saleable_steel
+
+  column avg_achievement_pct
+    dataType: double
+    lineageTag: apd-avg-pct
+    summarizeBy: average
+    sourceColumn: avg_achievement_pct
+    formatString: 0.0%
+
+  partition agg_plant_daily_summary = 
+m
+  let
+    Source = Lakehouse.Contents("Gold__lh"),
+    Tables = Source{[workspaceId="SAIL"]}[Data],
+    agg_summary = Tables{[Name="agg_plant_daily_summary"]}[Data]
+  in
+    agg_summary
+
+relationship dim_plant_to_fact_production
+  fromColumn: dim_plant.plant_id
+  toColumn: fact_production.plant_id
+  crossFilteringBehavior: bothDirections
+
+relationship dim_date_to_fact_production
+  fromColumn: dim_date.source_date
+  toColumn: fact_production.source_date
+  crossFilteringBehavior: bothDirections
+
+relationship dim_plant_to_fact_delays
+  fromColumn: dim_plant.plant_id
+  toColumn: fact_delays.plant_id
+
+relationship dim_date_to_fact_delays
+  fromColumn: dim_date.source_date
+  toColumn: fact_delays.source_date
+

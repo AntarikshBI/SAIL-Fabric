@@ -1,0 +1,19 @@
+# Power BI temporary files
+*.pbix~
+*.pbit~
+*.tmp
+~$*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.vs/
+*.swp
+*.swo
+
+# Build outputs
+dist/
+build/

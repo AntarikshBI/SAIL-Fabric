@@ -1,0 +1,15 @@
+{
+  "name": "ReportSection_Mills",
+  "displayName": "Rolling Mills",
+  "visualContainers": [
+    {
+      "x": 20,
+      "y": 80,
+      "z": 1,
+      "width": 1230,
+      "height": 580,
+      "config": "{\\"name\\":\\"mills_performance_table\\",\\"singleVisual\\":{\\"visualType\\":\\"tableEx\\",\\"dataTransforms\\":{\\"selects\\":[{\\"displayName\\":\\"Mill\\",\\"queryName\\":\\"mill_name\\"},{\\"displayName\\":\\"Target (T)\\",\\"queryName\\":\\"target\\"},{\\"displayName\\":\\"Production (T)\\",\\"queryName\\":\\"production\\"},{\\"displayName\\":\\"Finishing (T)\\",\\"queryName\\":\\"finishing\\"},{\\"displayName\\":\\"Prime (T)\\",\\"queryName\\":\\"prime\\"},{\\"displayName\\":\\"Hot Hours\\",\\"queryName\\":\\"hot_hours\\"},{\\"displayName\\":\\"% Utilization\\",\\"queryName\\":\\"utilization\\"},{\\"displayName\\":\\"% Target\\",\\"queryName\\":\\"pct_target\\"}]},\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Mill-wise Performance\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}],\\"grid\\":[{\\"properties\\":{\\"gridVertical\\":true,\\"gridVerticalColor\\":{\\"solid\\":{\\"color\\":\\"#1a2438\\"}},\\"gridHorizontal\\":true,\\"gridHorizontalColor\\":{\\"solid\\":{\\"color\\":\\"#1a2438\\"}}}}],\\"columnHeaders\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11,\\"backColor\\":{\\"solid\\":{\\"color\\":\\"#0a0f1a\\"}}}}],\\"values\\":[{\\"properties\\":{\\"fontColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":12,\\"backColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#0f1520\\"}},\\"backColorSecondary\\":{\\"solid\\":{\\"color\\":\\"#0a0f1a\\"}}}}],\\"total\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e87a20\\"}},\\"fontSize\\":12,\\"backColor\\":{\\"solid\\":{\\"color\\":\\"#0a0f1a\\"}}}}]}}}"
+    }
+  ],
+  "config": "{\\"displayName\\":\\"Rolling Mills\\",\\"objects\\":{\\"background\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#080c14\\"}}}}]}}"
+}

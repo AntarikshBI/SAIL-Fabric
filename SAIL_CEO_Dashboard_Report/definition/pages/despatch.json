@@ -1,0 +1,47 @@
+{
+  "name": "ReportSection_Despatch",
+  "displayName": "Despatch & Loading",
+  "visualContainers": [
+    {
+      "x": 20,
+      "y": 80,
+      "z": 1,
+      "width": 270,
+      "height": 150,
+      "config": "{\\"name\\":\\"saleable_loading_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"despatch.saleable_loading_actual\\"}]},\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Saleable Loading\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}]}}}"
+    },
+    {
+      "x": 310,
+      "y": 80,
+      "z": 2,
+      "width": 270,
+      "height": 150,
+      "config": "{\\"name\\":\\"finished_loading_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Finished Loading\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}]}}}"
+    },
+    {
+      "x": 600,
+      "y": 80,
+      "z": 3,
+      "width": 270,
+      "height": 150,
+      "config": "{\\"name\\":\\"semis_loading_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Semis Loading\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}]}}}"
+    },
+    {
+      "x": 890,
+      "y": 80,
+      "z": 4,
+      "width": 360,
+      "height": 150,
+      "config": "{\\"name\\":\\"movable_stock_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Movable Stock\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#0aafcf\\"}},\\"fontSize\\":26}}]}}}"
+    },
+    {
+      "x": 20,
+      "y": 250,
+      "z": 5,
+      "width": 1230,
+      "height": 410,
+      "config": "{\\"name\\":\\"products_table\\",\\"singleVisual\\":{\\"visualType\\":\\"tableEx\\",\\"dataTransforms\\":{\\"selects\\":[{\\"displayName\\":\\"Product\\",\\"queryName\\":\\"product_name\\"},{\\"displayName\\":\\"Plan (T)\\",\\"queryName\\":\\"plan\\"},{\\"displayName\\":\\"Actual (T)\\",\\"queryName\\":\\"actual\\"},{\\"displayName\\":\\"Variance\\",\\"queryName\\":\\"variance\\"},{\\"displayName\\":\\"Gross Stock\\",\\"queryName\\":\\"gross_stock\\"},{\\"displayName\\":\\"Loadable Stock\\",\\"queryName\\":\\"loadable_stock\\"}]},\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Product-wise Loading\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}],\\"columnHeaders\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}],\\"values\\":[{\\"properties\\":{\\"fontColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":12}}]}}}"
+    }
+  ],
+  "config": "{\\"displayName\\":\\"Despatch & Loading\\",\\"objects\\":{\\"background\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#080c14\\"}}}}]}}"
+}

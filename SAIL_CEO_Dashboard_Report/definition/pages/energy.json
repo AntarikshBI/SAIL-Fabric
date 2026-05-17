@@ -1,0 +1,47 @@
+{
+  "name": "ReportSection_Energy",
+  "displayName": "Energy & Utilities",
+  "visualContainers": [
+    {
+      "x": 20,
+      "y": 80,
+      "z": 1,
+      "width": 290,
+      "height": 150,
+      "config": "{\\"name\\":\\"power_gen_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Power Generation\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#d4a017\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"MW\\"}}]}}}"
+    },
+    {
+      "x": 330,
+      "y": 80,
+      "z": 2,
+      "width": 290,
+      "height": 150,
+      "config": "{\\"name\\":\\"plant_load_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Total Plant Load\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e87a20\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"MW\\"}}]}}}"
+    },
+    {
+      "x": 640,
+      "y": 80,
+      "z": 3,
+      "width": 290,
+      "height": 150,
+      "config": "{\\"name\\":\\"specific_power_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Specific Power\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#0aafcf\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"kWh/TCS\\"}}]}}}"
+    },
+    {
+      "x": 950,
+      "y": 80,
+      "z": 4,
+      "width": 300,
+      "height": 150,
+      "config": "{\\"name\\":\\"oxygen_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Oxygen Production\\",\\"fontSize\\":11}}],\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#3478f6\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"T\\"}}]}}}"
+    },
+    {
+      "x": 20,
+      "y": 250,
+      "z": 5,
+      "width": 1230,
+      "height": 410,
+      "config": "{\\"name\\":\\"power_sources_table\\",\\"singleVisual\\":{\\"visualType\\":\\"tableEx\\",\\"dataTransforms\\":{\\"selects\\":[{\\"displayName\\":\\"Power Source\\",\\"queryName\\":\\"source_name\\"},{\\"displayName\\":\\"Generation (MW)\\",\\"queryName\\":\\"generation_mw\\"},{\\"displayName\\":\\"Status\\",\\"queryName\\":\\"status\\"}]},\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Power Sources\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}],\\"columnHeaders\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}],\\"values\\":[{\\"properties\\":{\\"fontColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":12}}]}}}"
+    }
+  ],
+  "config": "{\\"displayName\\":\\"Energy & Utilities\\",\\"objects\\":{\\"background\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#080c14\\"}}}}]}}"
+}

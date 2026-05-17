@@ -1,0 +1,31 @@
+{
+  "name": "SAIL Dark Theme",
+  "dataColors": ["#e87a20", "#1db954", "#e84040", "#d4a017", "#0aafcf", "#3478f6", "#9070e0", "#e87a20"],
+  "bad": "#e84040",
+  "neutral": "#d4a017",
+  "good": "#1db954",
+  "background": "#080c14",
+  "backgroundLight": "#0f1520",
+  "backgroundNeutral": "#1a2438",
+  "foreground": "#e8ecf4",
+  "foregroundNeutral": "#8899b0",
+  "tableAccent": "#e87a20",
+  "textClasses": {
+    "callout": {"color": "#e8ecf4", "fontFace": "DM Sans"},
+    "title": {"color": "#e8ecf4", "fontFace": "DM Sans"},
+    "header": {"color": "#8899b0", "fontFace": "DM Sans"},
+    "label": {"color": "#566880", "fontFace": "DM Sans"}
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{"color": {"solid": {"color": "#0f1520"}}}],
+        "border": [{"color": {"solid": {"color": "#1a2438"}}}],
+        "general": [{
+          "responsive": true,
+          "keepLayerOrder": true
+        }]
+      }
+    }
+  }
+}

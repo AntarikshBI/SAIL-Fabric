@@ -1,0 +1,87 @@
+{
+  "name": "ReportSection_Overview",
+  "displayName": "Overview",
+  "visualContainers": [
+    {
+      "x": 20,
+      "y": 80,
+      "z": 1,
+      "width": 230,
+      "height": 140,
+      "config": "{\\"name\\":\\"hot_metal_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"fact_production.Hot Metal Actual\\"}]},\\"prototypeQuery\\":{\\"Version\\":2,\\"From\\":[{\\"Name\\":\\"f\\",\\"Entity\\":\\"fact_production\\"}],\\"Select\\":[{\\"Measure\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"Hot Metal Actual\\"}}]},\\"objects\\":{\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"color\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}],\\"general\\":[{\\"properties\\":{\\"responsive\\":true}}]}}}"
+    },
+    {
+      "x": 270,
+      "y": 80,
+      "z": 2,
+      "width": 230,
+      "height": 140,
+      "config": "{\\"name\\":\\"crude_steel_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"fact_production.Crude Steel Actual\\"}]},\\"objects\\":{\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"color\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}]}}}"
+    },
+    {
+      "x": 520,
+      "y": 80,
+      "z": 3,
+      "width": 230,
+      "height": 140,
+      "config": "{\\"name\\":\\"saleable_steel_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"fact_production.Saleable Steel Actual\\"}]},\\"objects\\":{\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"color\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}]}}}"
+    },
+    {
+      "x": 770,
+      "y": 80,
+      "z": 4,
+      "width": 230,
+      "height": 140,
+      "config": "{\\"name\\":\\"saleable_loading_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"fact_production.Saleable Loading Actual\\"}]},\\"objects\\":{\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"color\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}]}}}"
+    },
+    {
+      "x": 1020,
+      "y": 80,
+      "z": 5,
+      "width": 230,
+      "height": 140,
+      "config": "{\\"name\\":\\"achievement_card\\",\\"singleVisual\\":{\\"visualType\\":\\"card\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"fact_production.Achievement %\\"}]},\\"objects\\":{\\"labels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":26}}],\\"categoryLabels\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Overall Achievement\\",\\"color\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}]}}}"
+    },
+    {
+      "x": 20,
+      "y": 250,
+      "z": 6,
+      "width": 600,
+      "height": 420,
+      "config": "{\\"name\\":\\"production_vs_target_chart\\",\\"singleVisual\\":{\\"visualType\\":\\"clusteredBarChart\\",\\"projections\\":{\\"Category\\":[{\\"queryRef\\":\\"fact_production.kpi_name\\"}],\\"Y\\":[{\\"queryRef\\":\\"fact_production.Total Actual\\"},{\\"queryRef\\":\\"fact_production.Total Target\\"}]},\\"prototypeQuery\\":{\\"Version\\":2,\\"From\\":[{\\"Name\\":\\"f\\",\\"Entity\\":\\"fact_production\\"}],\\"Select\\":[{\\"Column\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"kpi_name\\"}},{\\"Measure\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"Total Actual\\"}},{\\"Measure\\":{\\"Expression\\":{\\"SourceRef\\":{\\"Source\\":\\"f\\"}},\\"Property\\":\\"Total Target\\"}}]},\\"objects\\":{\\"dataColors\\":[{\\"properties\\":{\\"colors\\":{\\"solid\\":{\\"color\\":\\"#e87a20\\"}},\\"targetColor\\":{\\"solid\\":{\\"color\\":\\"#8899b0\\"}}}}],\\"categoryAxis\\":[{\\"properties\\":{\\"fontSize\\":11,\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#8899b0\\"}}}}],\\"valueAxis\\":[{\\"properties\\":{\\"fontSize\\":11,\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#8899b0\\"}}}}],\\"legend\\":[{\\"properties\\":{\\"show\\":true,\\"position\\":\\"Top\\",\\"fontSize\\":11,\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#8899b0\\"}}}}],\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Production vs Target\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}]}}}"
+    },
+    {
+      "x": 640,
+      "y": 250,
+      "z": 7,
+      "width": 610,
+      "height": 420,
+      "config": "{\\"name\\":\\"kpi_summary_table\\",\\"singleVisual\\":{\\"visualType\\":\\"tableEx\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"fact_production.kpi_name\\"},{\\"queryRef\\":\\"fact_production.Total Actual\\"},{\\"queryRef\\":\\"fact_production.Total Target\\"},{\\"queryRef\\":\\"fact_production.Total Variance\\"},{\\"queryRef\\":\\"fact_production.Achievement %\\"}]},\\"objects\\":{\\"grid\\":[{\\"properties\\":{\\"gridVertical\\":true,\\"gridVerticalColor\\":{\\"solid\\":{\\"color\\":\\"#1a2438\\"}},\\"gridHorizontal\\":true,\\"gridHorizontalColor\\":{\\"solid\\":{\\"color\\":\\"#1a2438\\"}},\\"rowPadding\\":3,\\"outlineColor\\":{\\"solid\\":{\\"color\\":\\"#1a2438\\"}}}}],\\"columnHeaders\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11,\\"backColor\\":{\\"solid\\":{\\"color\\":\\"#0a0f1a\\"}}}}],\\"values\\":[{\\"properties\\":{\\"fontColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":12,\\"backColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#0f1520\\"}},\\"backColorSecondary\\":{\\"solid\\":{\\"color\\":\\"#0a0f1a\\"}}}}],\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"KPI Summary\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}]}}}"
+    },
+    {
+      "x": 20,
+      "y": 10,
+      "z": 8,
+      "width": 600,
+      "height": 60,
+      "config": "{\\"name\\":\\"plant_slicer\\",\\"singleVisual\\":{\\"visualType\\":\\"slicer\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"dim_plant.plant_name\\"}]},\\"objects\\":{\\"items\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"background\\":{\\"solid\\":{\\"color\\":\\"#0f1520\\"}},\\"fontSize\\":12}}],\\"header\\":[{\\"properties\\":{\\"show\\":true,\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11,\\"title\\":\\"Select Plant\\"}}],\\"general\\":[{\\"properties\\":{\\"orientation\\":1}}]}}}"
+    },
+    {
+      "x": 640,
+      "y": 10,
+      "z": 9,
+      "width": 300,
+      "height": 60,
+      "config": "{\\"name\\":\\"date_slicer\\",\\"singleVisual\\":{\\"visualType\\":\\"slicer\\",\\"projections\\":{\\"Values\\":[{\\"queryRef\\":\\"dim_date.source_date\\"}]},\\"objects\\":{\\"items\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"background\\":{\\"solid\\":{\\"color\\":\\"#0f1520\\"}},\\"fontSize\\":12}}],\\"header\\":[{\\"properties\\":{\\"show\\":true,\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11,\\"title\\":\\"Select Date\\"}}],\\"dateRange\\":[{\\"properties\\":{\\"includeToday\\":true}}]}}}"
+    },
+    {
+      "x": 960,
+      "y": 10,
+      "z": 10,
+      "width": 290,
+      "height": 60,
+      "config": "{\\"name\\":\\"title_textbox\\",\\"singleVisual\\":{\\"visualType\\":\\"textbox\\",\\"objects\\":{\\"general\\":[{\\"properties\\":{\\"paragraphs\\":[{\\"textRuns\\":[{\\"value\\":\\"SAIL DAILY OPERATIONS DASHBOARD\\",\\"textStyle\\":{\\"fontFamily\\":\\"DM Sans\\",\\"fontSize\\":\\"16pt\\",\\"fontWeight\\":\\"bold\\",\\"fontColor\\":\\"#e8ecf4\\"}}]}]}}]}}}"
+    }
+  ],
+  "config": "{\\"displayName\\":\\"Overview\\",\\"objects\\":{\\"background\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#080c14\\"}}}}]}}"
+}

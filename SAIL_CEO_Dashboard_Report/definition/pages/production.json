@@ -1,0 +1,39 @@
+{
+  "name": "ReportSection_Production",
+  "displayName": "Production Units",
+  "visualContainers": [
+    {
+      "x": 20,
+      "y": 80,
+      "z": 1,
+      "width": 600,
+      "height": 280,
+      "config": "{\\"name\\":\\"blast_furnaces_table\\",\\"singleVisual\\":{\\"visualType\\":\\"tableEx\\",\\"dataTransforms\\":{\\"selects\\":[{\\"displayName\\":\\"Unit\\",\\"queryName\\":\\"unit\\"},{\\"displayName\\":\\"Target (T)\\",\\"queryName\\":\\"target\\"},{\\"displayName\\":\\"Actual (T)\\",\\"queryName\\":\\"actual\\"},{\\"displayName\\":\\"Achievement %\\",\\"queryName\\":\\"pct\\"}]},\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Blast Furnaces - Hot Metal Production\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}],\\"columnHeaders\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}],\\"values\\":[{\\"properties\\":{\\"fontColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":12}}]}}}"
+    },
+    {
+      "x": 640,
+      "y": 80,
+      "z": 2,
+      "width": 610,
+      "height": 280,
+      "config": "{\\"name\\":\\"sms_table\\",\\"singleVisual\\":{\\"visualType\\":\\"tableEx\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Steel Melting Shops - Crude Steel\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}],\\"columnHeaders\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}],\\"values\\":[{\\"properties\\":{\\"fontColorPrimary\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":12}}]}}}"
+    },
+    {
+      "x": 20,
+      "y": 380,
+      "z": 3,
+      "width": 600,
+      "height": 280,
+      "config": "{\\"name\\":\\"sinter_plants_table\\",\\"singleVisual\\":{\\"visualType\\":\\"tableEx\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Sinter Plants\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}],\\"columnHeaders\\":[{\\"properties\\":{\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}]}}}"
+    },
+    {
+      "x": 640,
+      "y": 380,
+      "z": 4,
+      "width": 610,
+      "height": 280,
+      "config": "{\\"name\\":\\"coke_ovens_cards\\",\\"singleVisual\\":{\\"visualType\\":\\"multiRowCard\\",\\"objects\\":{\\"title\\":[{\\"properties\\":{\\"show\\":true,\\"text\\":\\"Coke Ovens\\",\\"fontColor\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":14}}],\\"dataLabels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#e8ecf4\\"}},\\"fontSize\\":18}}],\\"categoryLabels\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#566880\\"}},\\"fontSize\\":11}}]}}}"
+    }
+  ],
+  "config": "{\\"displayName\\":\\"Production Units\\",\\"objects\\":{\\"background\\":[{\\"properties\\":{\\"color\\":{\\"solid\\":{\\"color\\":\\"#080c14\\"}}}}]}}"
+}
