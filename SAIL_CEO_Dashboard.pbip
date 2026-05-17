@@ -3,8 +3,7 @@
   "artifacts": [
     {
       "report": {
-        "path": "SAIL_CEO_Dashboard_Report",
-        "type": "Report"
+        "path": "SAIL_CEO_Dashboard_Report"
       }
     }
   ]
