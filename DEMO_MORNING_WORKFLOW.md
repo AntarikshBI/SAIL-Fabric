@@ -45,18 +45,20 @@ Create a professional Power BI dashboard matching your .jsx design:
 
 ### **STEP 3: Open in Power BI Desktop (5 minutes)**
 
-1. **Launch Power BI Desktop:**
-   - Press Windows Key
-   - Type "Power BI"
-   - Open "Power BI Desktop"
+1. **Open the Power BI Project file:**
+   - Navigate to: `C:\Users\ashahwal\SAIL-Fabric`
+   - **Double-click:** `SAIL_CEO_Dashboard.pbip`
+   - Power BI Desktop will launch automatically
 
-2. **Open the report:**
-   - File → Open Report → Browse
-   - Navigate to: `C:\Users\ashahwal\SAIL-Fabric\SAIL_CEO_Dashboard_Report`
-   - Select: `report.json`
+   OR
+
+   - Open Power BI Desktop first
+   - File → Open → Browse
+   - Navigate to: `C:\Users\ashahwal\SAIL-Fabric`
+   - Select: `SAIL_CEO_Dashboard.pbip`
    - Click Open
 
-3. **If you see connection errors:**
+2. **If you see connection errors:**
    - Click "Edit Queries"
    - Click "Advanced Editor"
    - Verify the SQL endpoint is correct
